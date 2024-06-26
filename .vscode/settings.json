@@ -1,0 +1,25 @@
+{
+  // Add other web development settings here if needed
+
+  "editor.tabSize": 2,  // Set editor tab size to 3 spaces
+  "editor.insertSpaces": true,  // Use spaces instead of tabs
+  "editor.wordWrap": "on",  // Enable word wrap in the editor
+  "editor.renderWhitespace": "none",  // Do not show whitespace characters in the editor
+  "editor.minimap.enabled": false,  // Disable the minimap in the editor
+  "files.trimTrailingWhitespace": true,  // Trim trailing whitespace in files on save
+  "files.insertFinalNewline": true,  // Ensure a newline at the end of the file on save
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,  // Add a space before function parentheses in JavaScript
+  "prettier.singleQuote": true,  // Use single quotes instead of double quotes in Prettier
+  "prettier.trailingComma": "all",  // Add trailing commas wherever possible in Prettier
+  "html.format.wrapLineLength": 120,  // Set the maximum line length for HTML formatting
+  "css.validate": false,  // Disable CSS validation to avoid unnecessary warnings
+  "editor.snippetSuggestions": "top",  // Show user snippets before snippets from extensions
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },  // Automatically fix all issues on save
+  "explorer.confirmDelete": false,  // Disable delete confirmation in the file explorer
+  "editor.fontSize": 14,  // Set the font size in the editor
+  "files.exclude": { "**/.git": true, "**/.DS_Store": true },  // Exclude the .git folder and .DS_Store files
+  "search.exclude": { "**/node_modules": true, "**/dist": true },  // Exclude node_modules and dist folder from search results
+  "workbench.colorTheme": "GitHub Dark Default"  // Set the color theme to "GitHub Dark Default"
+}
