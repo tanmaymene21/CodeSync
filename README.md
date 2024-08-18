@@ -42,6 +42,18 @@ CodeSync comes packed with features that set it apart:
 - **Collaborative Code Editor**: Real-time collaborative editing sessions
 - **Syntax Highlighting**: Support for multiple programming languages
 
+Here's the updated section with the technologies and their symbols:
+
+## 🛠️ Technologies Used
+
+- **React** ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+- **Tailwind CSS** ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)
+- **Express.js** ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+- **Node.js** ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+- **MongoDB** ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+- **Socket.io** ![Socket.io](https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=socket.io&logoColor=white)
+- **Auth0** ![Auth0](https://img.shields.io/badge/Auth0-EB5424?style=for-the-badge&logo=auth0&logoColor=white)
+
 ## 🛠️ Installation Guide
 
 Get CodeSync up and running in minutes:
