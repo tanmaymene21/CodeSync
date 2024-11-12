@@ -67,7 +67,7 @@ const Layout = () => {
   const socketRef = useRef(null);
 
   useEffect(() => {
-    socketRef.current = io('http://localhost:3000');
+    socketRef.current = io('https://codesync-server-zpyc.onrender.com/');
 
     socketRef.current.emit('joinRoom', {
       roomId,
@@ -101,7 +101,7 @@ const Layout = () => {
   };
 
   const handleShare = () => {
-    navigator.clipboard.writeText(window.location.href); 
+    navigator.clipboard.writeText(window.location.href);
     alert('Room link copied to clipboard!');
   };
 

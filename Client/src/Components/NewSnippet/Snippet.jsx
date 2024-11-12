@@ -206,25 +206,28 @@ const Snippet = () => {
   const handleSave = async () => {
     try {
       const accessToken = await getAccessTokenSilently();
-      const response = await fetch('http://localhost:3000/api/snippets', {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-          'Content-Type': 'application/json',
+      const response = await fetch(
+        'https://codesync-server-zpyc.onrender.com/api/snippets',
+        {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: snippetName,
+            code,
+            theme: selectedTheme,
+            language: languages.find(
+              (lang) => lang.extension === selectedLanguage,
+            ).name,
+            gradient: selectedGradient,
+          }),
         },
-        body: JSON.stringify({
-          name: snippetName,
-          code,
-          theme: selectedTheme,
-          language: languages.find(
-            (lang) => lang.extension === selectedLanguage,
-          ).name,
-          gradient: selectedGradient,
-        }),
-      });
+      );
 
       if (response.ok) {
-        alert('Snippet saved successfully')
+        alert('Snippet saved successfully');
         console.log('Snippet saved successfully');
       } else {
         console.error('Failed to save snippet:', response.statusText);
@@ -266,7 +269,7 @@ const Snippet = () => {
                     <option
                       key={index}
                       value={lang.name}
-                      className="bg-[#191919] text-gray-300" 
+                      className="bg-[#191919] text-gray-300"
                     >
                       {lang.name}
                     </option>

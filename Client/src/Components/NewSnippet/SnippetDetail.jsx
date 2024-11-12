@@ -187,7 +187,7 @@ const SnippetDetail = () => {
       try {
         const accessToken = await getAccessTokenSilently();
         const response = await fetch(
-          `http://localhost:3000/api/snippets/${id}`,
+          `https://codesync-server-zpyc.onrender.com/api/snippets/${id}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -242,22 +242,25 @@ const SnippetDetail = () => {
   const handleSave = async () => {
     try {
       const accessToken = await getAccessTokenSilently();
-      const response = await fetch(`http://localhost:3000/api/snippets/${id}`, {
-        method: 'PUT',
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-          'Content-Type': 'application/json',
+      const response = await fetch(
+        `https://codesync-server-zpyc.onrender.com/api/snippets/${id}`,
+        {
+          method: 'PUT',
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: snippetName,
+            code,
+            theme: selectedTheme,
+            language: languages.find(
+              (lang) => lang.extension === selectedLanguage,
+            ).name,
+            gradient: selectedGradient,
+          }),
         },
-        body: JSON.stringify({
-          name: snippetName,
-          code,
-          theme: selectedTheme,
-          language: languages.find(
-            (lang) => lang.extension === selectedLanguage,
-          ).name,
-          gradient: selectedGradient,
-        }),
-      });
+      );
 
       if (!response.ok) {
         throw new Error('Failed to save snippet');
@@ -416,7 +419,7 @@ const SnippetDetail = () => {
                 theme={themeMap[selectedTheme]}
                 extensions={[selectedLanguage]}
                 onChange={(value) => handleCodeChange(value)}
-                className={`text-${fontSize}px`} 
+                className={`text-${fontSize}px`}
               />
             </div>
           </div>

@@ -43,11 +43,14 @@ const Dashboard = () => {
       if (!isAuthenticated) return;
       try {
         const accessToken = await getAccessTokenSilently();
-        const response = await fetch('http://localhost:3000/api/snippets', {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
+        const response = await fetch(
+          'https://codesync-server-zpyc.onrender.com/api/snippets',
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
           },
-        });
+        );
 
         if (!response.ok) {
           throw new Error('Failed to fetch snippets');
@@ -68,11 +71,14 @@ const Dashboard = () => {
       if (!isAuthenticated) return;
       try {
         const accessToken = await getAccessTokenSilently();
-        const response = await fetch('http://localhost:3000/api/collabs', {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
+        const response = await fetch(
+          'https://codesync-server-zpyc.onrender.com/api/collabs',
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
           },
-        });
+        );
 
         if (!response.ok) {
           throw new Error('Failed to fetch collabs');
@@ -89,7 +95,7 @@ const Dashboard = () => {
   }, [getAccessTokenSilently, isAuthenticated]);
 
   const sendData = (collab) => {
-    socketRef.current = io('http://localhost:3000');
+    socketRef.current = io('https://codesync-server-zpyc.onrender.com/');
     socketRef.current.emit('joinRoom', {
       roomId: collab._id,
       username: user?.name || 'Anonymous',
@@ -105,13 +111,16 @@ const Dashboard = () => {
   const createEmptyCollab = async () => {
     try {
       const accessToken = await getAccessTokenSilently();
-      const response = await fetch('http://localhost:3000/api/collabs', {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-          'Content-Type': 'application/json',
+      const response = await fetch(
+        'https://codesync-server-zpyc.onrender.com/api/collabs',
+        {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+            'Content-Type': 'application/json',
+          },
         },
-      });
+      );
 
       if (!response.ok) {
         throw new Error('Failed to create collab');
