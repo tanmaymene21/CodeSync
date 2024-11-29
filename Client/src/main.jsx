@@ -8,7 +8,7 @@ import './index.css';
 const domain = import.meta.env.VITE_AUTH0_DOMAIN;
 const clientId = import.meta.env.VITE_AUTH0_CLIENT_ID;
 const audience = import.meta.env.VITE_AUTH0_AUDIENCE;
-const redirectUri = window.location.origin;
+const redirectUri = import.meta.env.VITE_REDIRECT_URI;
 
 if (!domain || !clientId) {
   throw new Error('Missing environment variables for Auth0 configuration');
