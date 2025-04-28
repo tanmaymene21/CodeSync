@@ -4,7 +4,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const snippetRoutes = require('./routes/snippetRoutes');
 const collabRoutes = require('./routes/collabRoutes');
-// const { checkJwt } = require('./middleware/authMiddleware');
+const { checkJwt } = require('./middleware/authMiddleware');
 const http = require('http');
 const initializeSockets = require('./utils/sockets');
 
@@ -19,10 +19,10 @@ mongoose
   .then(() => console.log('MongoDB connected'))
   .catch((err) => console.error('MongoDB connection error:', err));
 
-app.use('/api/snippets', snippetRoutes);
-// app.use('/api/snippets', checkJwt, snippetRoutes);
-app.use('/api/collabs', collabRoutes);
-// app.use('/api/collabs', checkJwt, collabRoutes);
+// app.use('/api/snippets', snippetRoutes);
+app.use('/api/snippets', checkJwt, snippetRoutes);
+// app.use('/api/collabs', collabRoutes);
+app.use('/api/collabs', checkJwt, collabRoutes);
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
