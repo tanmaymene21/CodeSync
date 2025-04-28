@@ -7,7 +7,7 @@ exports.createSnippet = async (req, res) => {
 
   try {
     const response = await axios.get(
-      `https://${process.env.AUTH0_DOMAIN}userinfo`,
+      `https://${process.env.AUTH0_DOMAIN}/userinfo`,
       {
         headers: {
           authorization: `Bearer ${accessToken}`,
@@ -41,7 +41,7 @@ exports.getSnippets = async (req, res) => {
 
   try {
     const response = await axios.get(
-      `https://${process.env.AUTH0_DOMAIN}userinfo`,
+      `https://${process.env.AUTH0_DOMAIN}/userinfo`,
       {
         headers: {
           authorization: `Bearer ${accessToken}`,
@@ -84,7 +84,7 @@ exports.deleteSnippet = async (req, res) => {
 
   try {
     const response = await axios.get(
-      `https://${process.env.AUTH0_DOMAIN}userinfo`,
+      `https://${process.env.AUTH0_DOMAIN}/userinfo`,
       {
         headers: {
           authorization: `Bearer ${accessToken}`,
@@ -118,7 +118,7 @@ exports.updateSnippet = async (req, res) => {
 
   try {
     const response = await axios.get(
-      `https://${process.env.AUTH0_DOMAIN}userinfo`,
+      `https://${process.env.AUTH0_DOMAIN}/userinfo`,
       {
         headers: {
           authorization: `Bearer ${accessToken}`,

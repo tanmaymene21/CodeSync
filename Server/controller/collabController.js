@@ -8,7 +8,7 @@ exports.createCollab = async (req, res) => {
 
   try {
     const response = await axios.get(
-      `https://${process.env.AUTH0_DOMAIN}userinfo`,
+      `https://${process.env.AUTH0_DOMAIN}/userinfo`,
       {
         headers: {
           authorization: `Bearer ${accessToken}`,
@@ -39,7 +39,7 @@ exports.getCollabs = async (req, res) => {
 
   try {
     const response = await axios.get(
-      `https://${process.env.AUTH0_DOMAIN}userinfo`,
+      `https://${process.env.AUTH0_DOMAIN}/userinfo`,
       {
         headers: {
           authorization: `Bearer ${accessToken}`,
@@ -79,7 +79,7 @@ exports.deleteCollab = async (req, res) => {
 
   try {
     const response = await axios.get(
-      `https://${process.env.AUTH0_DOMAIN}userinfo`,
+      `https://${process.env.AUTH0_DOMAIN}/userinfo`,
       {
         headers: {
           authorization: `Bearer ${accessToken}`,
