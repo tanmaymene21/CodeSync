@@ -25,6 +25,8 @@ import { json } from '@codemirror/lang-json';
 import { io } from 'socket.io-client';
 import logo from '../../assets';
 
+const api_url = import.meta.env.VITE_API_URL;
+
 const languages = [
   { name: 'JavaScript', extension: javascript() },
   { name: 'Python', extension: python() },
@@ -67,7 +69,7 @@ const Layout = () => {
   const socketRef = useRef(null);
 
   useEffect(() => {
-    socketRef.current = io('https://codesync-server-zpyc.onrender.com/');
+    socketRef.current = io(`${api_url}/`);
 
     socketRef.current.emit('joinRoom', {
       roomId,

@@ -1,5 +1,5 @@
 require('dotenv').config();
-const jwt = require('express-jwt');
+const { expressjwt: jwt } = require('express-jwt');
 const jwks = require('jwks-rsa');
 
 const checkJwt = jwt({
@@ -10,7 +10,7 @@ const checkJwt = jwt({
     jwksUri: process.env.JWKS_URI,
   }),
   audience: process.env.AUTH0_AUDIENCE,
-  issuer: process.env.AUTH0_DOMAIN,
+  issuer: `https://${process.env.AUTH0_DOMAIN}/`,
   algorithms: ['RS256'],
 });
 

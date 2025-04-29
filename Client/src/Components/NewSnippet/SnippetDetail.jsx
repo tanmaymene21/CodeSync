@@ -42,6 +42,8 @@ import {
   xcodeLight,
 } from '@uiw/codemirror-themes-all';
 
+const api_url = import.meta.env.VITE_API_URL;
+
 import { javascript } from '@codemirror/lang-javascript';
 import { python } from '@codemirror/lang-python';
 import { html } from '@codemirror/lang-html';
@@ -186,14 +188,11 @@ const SnippetDetail = () => {
     const fetchSnippet = async () => {
       try {
         const accessToken = await getAccessTokenSilently();
-        const response = await fetch(
-          `https://codesync-server-zpyc.onrender.com/api/snippets/${id}`,
-          {
-            headers: {
-              Authorization: `Bearer ${accessToken}`,
-            },
+        const response = await fetch(`${api_url}/api/snippets/${id}`, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
           },
-        );
+        });
 
         if (!response.ok) {
           throw new Error('Failed to fetch snippet');
@@ -243,7 +242,7 @@ const SnippetDetail = () => {
     try {
       const accessToken = await getAccessTokenSilently();
       const response = await fetch(
-        `https://codesync-server-zpyc.onrender.com/api/snippets/${id}`,
+        `${api_url}/api/snippets/${id}`,
         {
           method: 'PUT',
           headers: {

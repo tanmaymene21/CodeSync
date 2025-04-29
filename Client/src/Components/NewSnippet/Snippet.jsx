@@ -57,6 +57,8 @@ import { yaml } from '@codemirror/lang-yaml';
 import { json } from '@codemirror/lang-json';
 import { useAuth0 } from '@auth0/auth0-react';
 
+const api_url = import.meta.env.VITE_API_URL;
+
 const languages = [
   { name: 'JavaScript', extension: javascript() },
   { name: 'Python', extension: python() },
@@ -207,7 +209,7 @@ const Snippet = () => {
     try {
       const accessToken = await getAccessTokenSilently();
       const response = await fetch(
-        'https://codesync-server-zpyc.onrender.com/api/snippets',
+        `${api_url}/api/snippets`,
         {
           method: 'POST',
           headers: {
