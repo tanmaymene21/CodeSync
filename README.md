@@ -80,7 +80,7 @@ Get CodeSync up and running in minutes:
 
 ## 🚀 Quick Start
 
-After installation, visit `https://sync-my-code.vercel.app` to start using CodeSync. Create an account, and you're ready to sync your code!
+After installation, visit `http://localhost:5173` to start using CodeSync. Create an account, and you're ready to sync your code!
 
 ---
 
