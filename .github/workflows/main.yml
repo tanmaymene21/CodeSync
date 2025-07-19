@@ -1,0 +1,14 @@
+name: Ping every 14 minutes
+
+on:
+  schedule:
+    - cron: '*/14 * * * *'  # Runs every 14 minutes
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  curl-website:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run cURL on Website
+        run: curl -I https://codesync-server-zpyc.onrender.com
