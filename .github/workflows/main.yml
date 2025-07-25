@@ -1,4 +1,4 @@
-name: Ping every 14 minutes
+name: Ping every 10 minutes
 
 on:
   schedule:
