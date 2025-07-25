@@ -2,7 +2,7 @@ name: Ping every 14 minutes
 
 on:
   schedule:
-    - cron: '*/14 * * * *'  # Runs every 14 minutes
+    - cron: '*/10 * * * *'  # Runs every 10 minutes
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
